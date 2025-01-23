@@ -219,7 +219,6 @@
     <ul class = "nav-links">
         <li><a href="/home">Home</a></li>
         <li><a href="/game">Game</a></li>
-        
      </ul>
     </div>
 </nav> 
@@ -227,6 +226,9 @@
             <h1>Welcome Back</h1>
             <h3>Please sign in to continue</h3>
         </header>
+        <% if (error) { %>
+            <p class="error"><%= error %></p>
+          <% } %>
         <div class="cont">
             <form action="/signin/submit" method="POST">
                 <div>

@@ -27,11 +27,15 @@ router.get('/home', function(req, res) {
 });
 
 router.get('/signin', function(req, res, next) {
-  res.render('signin');
+  const error = req.query.error || null; // Get the error message from the query string
+  res.render('signin', { error }); // Pass the error message to the template
+  //res.render('signin');
 });
 
 router.get('/signup', function(req, res, next) {
-  res.render('signup');
+  const error = req.query.error || null; // Get the error message from the query string
+  res.render('signup', { error }); // Pass the error message to the template
+  //res.render('signup');
 });
 
 router.get('/game', (req, res) => {
@@ -54,7 +58,8 @@ router.post('/signup/submit', async (req, res) => {
     const conn = await getCollection('users');
     const existingUser = await conn.findOne({ email });
     if (existingUser){
-      return res.redirect('/signin');
+      return res.redirect('/signin?error=Your email is already in our system, please sign in');
+      //return res.redirect('/signin');
     }
 
     await conn.insertOne(req.body);
@@ -62,8 +67,8 @@ router.post('/signup/submit', async (req, res) => {
     res.redirect('/game');
 
   } catch(e) {
-    console.log(`This is the error in the /signup/submit ${e}`);
-    res.redirect('/signup');
+    //console.log(`This is the error in the /signup/submit ${e}`);
+    res.redirect('/signup?error=An error occurred. Please try again.');
   }
 });
 
@@ -78,13 +83,16 @@ router.post('/signin/submit', async (req, res) => {
     if (user) {
       res.redirect('/game');
     } else {
-      console.log('Invalid email or password.');
-      res.redirect('/signin');
+
+      //console.log('Invalid email or password.');
+      //res.redirect('/signin');
+      res.redirect('/signin?error=Invalid email or password, please try again or sign up instead');
     }
   } 
   catch(e) {
     console.log(`This is the error in the /signin/submit ${e}`);
-    res.redirect('/signin');
+    //res.redirect('/signin');
+    res.redirect('/signin?error=An error occurred. Please try again.');
   }
 });
 

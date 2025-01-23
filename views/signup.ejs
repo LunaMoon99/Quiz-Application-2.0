@@ -228,6 +228,9 @@
         <h1>Create an Account</h1>
         <h3>Join us and get started today</h3>
     </header>
+    <% if (error) { %>
+        <p class="error"><%= error %></p>
+      <% } %>
     <div class="cont">
         <form action="/signup/submit" method="POST">
             <div>
