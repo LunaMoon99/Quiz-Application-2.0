@@ -11,7 +11,6 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 //Database connection!!
-//nameless function
 async function initializeApp() {
   try {
     console.log('Initializing database connection...');
