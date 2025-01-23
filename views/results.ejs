@@ -221,7 +221,7 @@
         <li><a href="/game">Game</a></li>
         
      </ul>
-</div>
+    </div>
 </nav> 
   
 
@@ -234,10 +234,10 @@
 
 
    <div class="cont">
-       <strong>Name: </strong><span id="currentUser"></span>
-       <br>
-       <strong>Score: </strong><span id="score"> </span> out of <span id="total"> </span>
-       <br>
+        <strong>Name: </strong><span id="currentUser"></span>
+        <br>
+        <strong>Score: </strong><span id="score"> </span> out of <span id="total"> </span>
+        <br>
        <strong>Feedback: </strong><span id="feedback"></span></li>
    </div>
 
@@ -270,14 +270,14 @@
  
             if (currentUser) {
                 // Update the results page elements with the current user's data
-                document.getElementById("currentUser").textContent = currentUser.name;
-                document.getElementById("score").textContent = currentUser.score;
+                //document.getElementById("currentUser").textContent = currentUser.name;
+                //document.getElementById("score").textContent = currentUser.score;
                 document.getElementById("total").textContent = "100"; // Adjust the total score as needed
                 document.getElementById("feedback").textContent = getFeedback(currentUser.score);
             } else {
                 // If no current user exists, display a default message
-                document.getElementById("currentUser").textContent = "N/A";
-                document.getElementById("score").textContent = "N/A";
+                //document.getElementById("currentUser").textContent = "N/A";
+                //document.getElementById("score").textContent = "N/A";
                 document.getElementById("total").textContent = "N/A";
                 document.getElementById("feedback").textContent = "No results found.";
             }
