@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign In</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Arial', sans-serif;
+            }
+    
+            body {
+                background: linear-gradient(135deg, #6a11cb, #2575fc);
+                color: #ffffff;
+                line-height: 1.6;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+            }
+    
+            header {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+    
+            header>h1 {
+                font-size: 3rem;
+                font-weight: bold;
+                color: white;
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+                margin-bottom: 10px;
+            }
+    
+            header>h3 {
+                font-size: 1.5rem;
+                color: white;
+                font-weight: 300;
+                opacity: 0.9;
+            }
+    
+            .cont {
+                background: rgba(255, 255, 255, 0.1);
+                padding: 20px 30px;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                max-width: 800px;
+                text-align: left;
+                color: white;
+            }
+    
+            .cont>p {
+                font-size: 1.2rem;
+                margin-bottom: 15px;
+                color: white;
+            }
+    
+            ul {
+                list-style: none;
+                padding: 0;
+                text-align: left;
+            }
+    
+            ul>li {
+                font-size: 1rem;
+                margin: 10px 0;
+                position: relative;
+                padding-left: 20px;
+            }
+    
+            ul>li::before {
+                color: #ffdf00;
+                font-size: 1.2rem;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+    
+            .button {
+                display: inline-block;
+                background: #ffdf00;
+                color: #000;
+                font-size: 1.1rem;
+                font-weight: bold;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                text-transform: uppercase;
+                transition: background 0.3s ease, transform 0.2s ease;
+                margin-top: 20px;
+            }
+    
+            .button:hover {
+                background: #ffcc00;
+                transform: scale(1.05);
+            }
+    
+            .button:active {
+                background: #e6b800;
+                transform: scale(0.95);
+            }
+    
+            footer {
+                text-align: center;
+                margin-top: 20px;
+                font-size: 0.9rem;
+                opacity: 0.8;
+                color: white;
+            }
+    
+            footer p {
+                margin: 5px 0;
+            }
+    
+            .carousel {
+                padding: 25px;
+            }
+    
+            /* Main Nav */
+    
+    
+            nav, 
+            .nav-link {
+                    display: flex;
+                    flex-direction: row;
+                    color: rgb(250, 251, 251);
+                    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+                    
+            }
+    
+            nav{
+                    justify-content: space-around;
+                    align-items: center;
+                    height: 12vh;
+            }
+    
+            .nav-link {
+                    list-style: none;
+                    gap: 1rem;
+                    font-size: 1.5rem;
+            }
+    
+            nav ul {
+                    display: flex;
+                    flex-direction: row;
+                    /* padding: 0;
+                    margin: 0; */
+                    list-style: none;
+                    
+                    ;
+            }
+    
+            nav ul li {
+                /* margin: 0; */
+                    list-style: none; 
+                    
+            }
+    
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                /* padding: 14px 16px; */
+                text-decoration: none;
+            
+            }
+    
+            a{
+                    color: black;
+                    text-decoration: none;
+                    text-decoration-color: white;
+            }
+    
+            a:hover{
+                    color: yellow;
+                    text-decoration: underline;
+                    text-underline-offset: 1rem;
+                    text-decoration-color: yellow;
+                    
+            }
+    
+            .logo {
+                font-family: 'Brush Script MT', cursive;
+                    font-size: 1.7rem;
+                    margin-right: 380px;
+                    color: yellow;
+            }
+    
+            .logo:hover{
+                cursor: default;
+            } 
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        </style>
+    
+    </head>
+
+    <body>
+        <header>
+            <h1>Welcome Back</h1>
+            <h3>Please sign in to continue</h3>
+        </header>
+        <div class="cont">
+            <form action="/signin/submit" method="POST">
+                <div>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required
+                        style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px;">
+                </div>
+                <div>
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password" required
+                        style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px;">
+                </div>
+                <a href="/signin"><button type="submit" class="button">Sign In</button></a>
+            </form>
+        </div>
+        <!-- <footer>
+            <p>Don't have an account? <a href="SignUp\signup.html">Sign up here</a></p>
+        </footer> -->
+    </body>
+</html>
