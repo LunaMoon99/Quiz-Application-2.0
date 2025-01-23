@@ -9,6 +9,7 @@ server.use(express.static('public'));
 server.use(express.urlencoded({ extended: true }));
 
 var arrayofscores = [];
+let currentUser = "";
 
 router.get('/', function(req, res, next) {
   res.redirect('/home');
@@ -54,6 +55,15 @@ router.post('/signup/submit', async (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
   const password = req.body.password;
+
+  const newUser = {
+    email: email,
+    name: name, 
+    password: password,
+    scores: []
+  }
+  arrayofscores = newUser.scores;
+
   try{
     const conn = await getCollection('users');
     const existingUser = await conn.findOne({ email });
@@ -63,7 +73,7 @@ router.post('/signup/submit', async (req, res) => {
     }
 
     await conn.insertOne(req.body);
-
+    currentUser = email;
     res.redirect('/game');
 
   } catch(e) {
@@ -81,6 +91,8 @@ router.post('/signin/submit', async (req, res) => {
     //await conn.findOne();
     const user = await conn.findOne({ email, password });
     if (user) {
+      currentUser = email;
+      arrayofscores = user.scores;
       res.redirect('/game');
     } else {
 
@@ -95,5 +107,11 @@ router.post('/signin/submit', async (req, res) => {
     res.redirect('/signin?error=An error occurred. Please try again.');
   }
 });
+
+function getUser() {
+  return {
+    currentUser, arrayofscores
+  };
+}
 
 module.exports = router;
