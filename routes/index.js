@@ -9,6 +9,7 @@ server.use(express.static('public'));
 server.use(express.urlencoded({ extended: true }));
 
 var arrayofscores = [];
+// Added by Sulaiman
 let currentUser = "";
 
 router.get('/', function(req, res, next) {
@@ -56,6 +57,7 @@ router.post('/signup/submit', async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
+  // Added by Sulaiman
   const newUser = {
     email: email,
     name: name, 
@@ -73,6 +75,7 @@ router.post('/signup/submit', async (req, res) => {
     }
 
     await conn.insertOne(req.body);
+    // Added by Sulaiman
     currentUser = email;
     res.redirect('/game');
 
@@ -91,6 +94,7 @@ router.post('/signin/submit', async (req, res) => {
     //await conn.findOne();
     const user = await conn.findOne({ email, password });
     if (user) {
+      // Added by Sulaiman
       currentUser = email;
       arrayofscores = user.scores;
       res.redirect('/game');
@@ -108,6 +112,7 @@ router.post('/signin/submit', async (req, res) => {
   }
 });
 
+// Added by Sulaiman
 function getUser() {
   return {
     currentUser, arrayofscores
