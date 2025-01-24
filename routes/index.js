@@ -9,6 +9,8 @@ server.use(express.static('public'));
 server.use(express.urlencoded({ extended: true }));
 
 var arrayofscores = [];
+// Added by Sulaiman
+let currentUser = "";
 let currentuser = "";
 
 router.get('/', function(req, res) {
@@ -91,7 +93,8 @@ router.post('/signup/submit', async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
-  const newuser = {
+  // Added by Sulaiman
+  const newUser = {
     email: email,
     name: name, 
     password: password,
