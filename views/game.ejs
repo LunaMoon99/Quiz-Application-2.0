@@ -400,11 +400,10 @@
       <script>
             // Reference top the question
 
-
-            const decodeHTML = (html) => {
-            const textArea = document.createElement("textarea");
-            textArea.innerHTML = html;
-            return textArea.value;
+      const decodeHTML = (html) => {
+      const textArea = document.createElement("textarea");
+      textArea.innerHTML = html;
+      return textArea.value;
       };
 
       const question = document.getElementById("question");
@@ -486,25 +485,6 @@
             if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
                   window.location.replace(`/results?score=${score}`);
                   return;
-                  // // Send the score via AJAX instead of using the URL
-                  // const scoreData = {
-                  //       score: score // The score you want to send to the server
-                  // };
-
-                  // fetch('/results', {
-                  //       method: 'POST',
-                  //       headers: {
-                  //       'Content-Type': 'application/json'
-                  //       },
-                  //       body: JSON.stringify(scoreData) // Send the score as JSON data
-                  // })
-                  // .then(response => response.json()) // Assuming the server responds with JSON
-                  // .then(data => {
-                  //       // Redirect to the results page after saving the score (or handle the response accordingly)
-                  //       window.location.replace('/results');
-                  // })
-                  // .catch(error => console.error('Error:', error));
-                  // return;
             }
 
             questionCounter++;
