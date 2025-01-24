@@ -94,7 +94,7 @@ router.post('/signup/submit', async (req, res) => {
   const password = req.body.password;
 
   // Added by Sulaiman
-  const newUser = {
+  const newuser = {
     email: email,
     name: name, 
     password: password,
