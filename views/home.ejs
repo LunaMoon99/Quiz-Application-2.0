@@ -215,8 +215,12 @@
         <div class="logo"> ThinkStorm </div>
         <div>
             <ul class="nav-links">
-                <li><a href="/home">Home</a></li>
-                <li><a href="/game">Game</a></li>
+                <li><a href="/signin">Sign In</a></li>
+                <li><a href="/signup">Sign Up</a></li>
+                <%if (currentuser !== ""){%>
+                    <li><a href="/game">Game</a></li>
+                    <li><a href="/profile">Profile</a></li>
+                <%}%>
 
             </ul>
         </div>
@@ -300,12 +304,14 @@
     </div>
 
     <div>
-        <a href="/signin"><button id="sound" class="button">Sign in to jump into a game!</button></a>
-        <a href="/signup"><button id="sound" class="button">Or Sign up to jump into a game!</button></a>
-        <!-- <a href="Results\results.html"><button id="sound" class="button">View Leaderboard</button></a> -->
+        <%if (currentuser !== ""){%>
+            <a href="/game"><button id="game" class="button">Play a game!</button></a>
+        <%}else{%>
+            <a href="/signin"><button id="signin" class="button">Sign in to jump into a game!</button></a>
+            <a href="/signup"><button id="signup" class="button">Or Sign up to jump into a game!</button></a>
+        <%}%>
     </div>
 
-    <!-- <audio id="audio" src="Media\Button Sound Effect.mp3"></audio> -->
 
     <footer>
         <p>&copy; 2025 ThinkStorm. All rights reserved. Your trivia adventure starts here!</p>

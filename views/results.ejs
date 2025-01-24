@@ -219,6 +219,7 @@
     <ul class = "nav-links">
         <li><a href="/home">Home</a></li>
         <li><a href="/game">Game</a></li>
+        <li><a href="/profile">Profile</a></li>
         
      </ul>
     </div>
@@ -231,19 +232,22 @@
            <h1>Results Of Your Quiz!</h1>
        </header>
    </div>
-
+   <% if (error) { %>
+    <p class="error"><%= error %></p>
+  <% } %>
 
    <div class="cont">
-        <strong>Name: </strong><span id="currentUser"></span>
+        <strong>Name: </strong><span><%= currentuser %></span>
         <br>
-        <strong>Score: </strong><span id="score"> </span> out of <span id="total"> </span>
+        <strong>Score: </strong><span><%= score %></span> out of 100</span>
         <br>
-       <strong>Feedback: </strong><span id="feedback"></span></li>
+        <strong>Feedback: </strong><span><%= feedback %></span>
+        <br>
    </div>
 
 
    <div>
-       <a href="/game"><button class="button">Try Again</button></a>
+       <a href="/game"><button class="button">Play Again</button></a>
    </div>
 
 
@@ -258,43 +262,6 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
        crossorigin="anonymous"></script>
-
-
-   <script>
-        // Function to fetch data from local storage and display it on the results page
-        document.addEventListener("DOMContentLoaded", () => {
-            const displayResults = () => {
- 
-        //const currentUserJSON = localStorage.getItem("currentUser");
-        //const currentUser = currentUserJSON ? JSON.parse(currentUserJSON) : null;
- 
-            if (currentUser) {
-                // Update the results page elements with the current user's data
-                //document.getElementById("currentUser").textContent = currentUser.name;
-                //document.getElementById("score").textContent = currentUser.score;
-                document.getElementById("total").textContent = "100"; // Adjust the total score as needed
-                document.getElementById("feedback").textContent = getFeedback(currentUser.score);
-            } else {
-                // If no current user exists, display a default message
-                //document.getElementById("currentUser").textContent = "N/A";
-                //document.getElementById("score").textContent = "N/A";
-                document.getElementById("total").textContent = "N/A";
-                document.getElementById("feedback").textContent = "No results found.";
-            }
-        };
-    
-        // Function to provide feedback based on the score
-        const getFeedback = (score) => {
-            if (score >= 80) return "Excellent job!";
-            if (score >= 50) return "Good effort, keep practicing!";
-            return "Keep trying! Practice makes perfect.";
-        };
-    
-        // Call the displayResults function when the page loads
-        displayResults();
-    });
- 
-   </script>
 </body>
 
 
