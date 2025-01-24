@@ -39,7 +39,7 @@ router.get('/game', function(req, res) {
 
 router.get('/results', async (req, res) => {
   try {
-    const conn = await getCollection('users');
+    const conn = await getCollection(process.env.COLLECTION);
     const score = parseInt(req.query.score, 10); // Extract the score from the query string
 
     if (!isNaN(score)) {
@@ -67,7 +67,7 @@ router.get('/results', async (req, res) => {
 
 router.get('/profile', async (req, res) => {
   try {
-    const conn = await getCollection('users'); // Get the 'users' collection
+    const conn = await getCollection(process.env.COLLECTION); // Get the 'users' collection
 
     // Fetch the current user's document from the database
     const user = await conn.findOne({ name: currentuser }); // Query by the current user's name
@@ -100,7 +100,7 @@ router.post('/signup/submit', async (req, res) => {
   arrayofscores = newuser.scores;
 
   try{
-    const conn = await getCollection('users');
+    const conn = await getCollection(process.env.COLLECTION);
     const existinguser = await conn.findOne({ email });
     if (existinguser){
       return res.redirect('/signin?error=Your email is already in our system, please sign in');
@@ -120,7 +120,7 @@ router.post('/signin/submit', async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
   try{
-    const conn = await getCollection('users');
+    const conn = await getCollection(process.env.COLLECTION);
     const user = await conn.findOne({ email, password });
     if (user) {
       currentuser = user.name;
