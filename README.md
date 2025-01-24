@@ -25,11 +25,16 @@ To run the server on VS Code:
 1. Once the contents of the Zip File have been extracted in VS Code make sure everything looks good
 2. Run 'npm install' to install all required packages
 3. To make sure that MongoDB works, make a '.env' file that contains this line:
-     ATLAS_URI="mongodb+srv://<YOUR_USERNAME>:<YOUR_DB_PASSWORD>@cluster0.lcx9a.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-   Replace <YOUR_USERNAME> and <YOUR_DB_PASSWORD> according to your personal username and database password
-5. Once everything installs, in the terminal of VS code, run either 'nodemon app.js' or 'nodemon start' depending on which on works
-6. Once it is running, go to your favored browser and type "LocalHost:3500" in the url
-7. Then the page should be running! Enjoy!
+4.      ATLAS_URI="mongodb+srv://<YOUR_USERNAME>:<YOUR_DB_PASSWORD>@cluster0.lcx9a.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+5. Replace <YOUR_USERNAME> and <YOUR_DB_PASSWORD> according to your personal username and database password
+6. Make sure that your cluster name is also 'Cluster0', otherwise go to MongoDB make/view your cluster: click connect, then drivers, and turn off the view code              sample and copy and paste the connection string that appears there and follow step 5 above
+7. If you want to be able to see if MongoDB is running on your server, make sure to add these two lines in your '.env' file:
+8.      DATABASE="<DATABASE_NAME>"
+9.      COLLECTION="<COLLECTION_NAME>"
+10. Make sure the database name and collection name match what is in your corresponding cluster
+11. Once everything installs, in the terminal of VS code, run either 'nodemon app.js' or 'nodemon start' depending on which on works
+12. Once it is running, go to your favored browser and type "LocalHost:3500" in the url
+13. Then the page should be running! Enjoy!
 
 ## Team Contributions/Challenges
 
