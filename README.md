@@ -34,7 +34,7 @@ Our team is made up of four aspiring computer scientists, and we each had our re
 
 - Sulaiman Alam: Focused on the coding of the home page, signup page, and signin page. Also worked on the app.js page to enable the server running and the sharing of data.
 - Paulo Criollo: Focused on the game page of the application and coding the system that randomly retrieve questions from the OpenTrivia API and gets dynamically displayed to the user to answer.
-- Jenny Zheng: Focused on the results page of the application and coding the parts that allowed it to show the specific user's name and score on this page.
+- Jenny Zheng: Focused implementing the server, ejs files, expressjs and mongodb. Refactored our previous quiz application code into a format that is able to use the aformentioned newly added features.
 - Anjiya Shrestha: Focused on the profile page of the application, and coding the parts like the welcome and making sure it works.
 
 ## Next Steps
