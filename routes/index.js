@@ -112,11 +112,11 @@ router.post('/signin/submit', async (req, res) => {
   }
 });
 
-// Added by Sulaiman
-function getUser() {
-  return {
-    currentUser, arrayofscores
-  };
-}
+// user and scores
+ function getUser() {
+   return {
+     currentUser, arrayofscores
+   };
+ }
 
 module.exports = router;
