@@ -17,9 +17,6 @@
        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
        crossorigin="anonymous"></script>
 
-
-   <!--<link rel="stylesheet" href="profile.css" />-->
-
    <style>
         * {
             margin: 0;
@@ -80,10 +77,12 @@
         ul {
             list-style: none;
             padding: 0;
-            text-align: left;
+            max-height: 200px; /* Adjust this to your desired height */
+            overflow-y: auto; /* Enable vertical scrolling */
+            margin: 0; /* Ensure no extra spacing */
         }
 
-        ul>li {
+        ul > li {
             font-size: 1rem;
             margin: 10px 0;
             position: relative;
@@ -96,6 +95,7 @@
             position: absolute;
             left: 0;
             top: 0;
+            
         }
 
         .button {
@@ -151,6 +151,7 @@
         }
 
         nav{
+            position: sticky;
             justify-content: space-around;
             align-items: center;
             height: 12vh;
@@ -166,22 +167,19 @@
             display: flex;
             flex-direction: row;
             list-style: none;
+            padding-left: 0;
             margin-bottom: 260px;
-            
-            ;
         }
 
         nav ul li {
-
-            list-style: none; 
-            
+            list-style: none;  
         }
 
         li a {
-        display: block;
-        color: white;
-        text-align: center;
-        text-decoration: none;
+            display: block;
+            color: white;
+            text-align: center;
+            text-decoration: none;
 
         }
 
@@ -252,49 +250,38 @@
  <nav id = "desktop-nav">
     <div class="logo"> ThinkStorm </div>
     <div>
-    <ul class = "nav-links">
-        <li><a href="/home">Home</a></li>
-        <li><a href="/game">Game</a></li>  
-     </ul>
-</div>
-</nav> 
-   
-
-   <div>
-       <header>
-           <!-- <h1>profile</h1> -->
-       </header>
-   </div>
-
-  <div class="container">
-     <h1>Welcome, <span id="currentUser.name"></span></h1>
-     <p>Here are your quiz results</p>
-     
-     <div class="profile-section">
-         <h2>Game History</h2>
-         <table id="playHistory">
-             <h3>Score</h3>
-             <thead>
-                 <tr>
-                     <!-- <th>Quiz Date</th> -->
-                     <!-- <th> Score </th> -->
-                     
-                     <span id="score"> </span> / <span id="total"> </span>
- 
-                     <!-- <th>Category</th> -->
-                 </tr>
-             </thead>
-             <tbody>              
- 
-             </tbody>
-         </table>
-     </div>
-  </div>
-
-
-     <div>
-        <a href="/game"><button class="button">Try Again</button></a>
+        <ul class = "nav-links">
+            <li><a href="/home">Home</a></li>   
+            <li><a href="/game">Game</a></li>
+        </ul>
     </div>
+</nav> 
+
+
+   <div class="container">
+    <h1>Welcome, <span><%= currentuser %></span></h1>
+    
+    <div class="profile-section">
+        <h2>Game Score History</h2>
+        <h3>(Out of 100 points)</h3>
+        <% if (arrayofscores && arrayofscores.length > 0) { %>
+            <ul>
+                <% arrayofscores.forEach(function(userScore, index) { %>
+                    <li>
+                        Attempt <%= index + 1 %>: <%= userScore %>
+                    </li>
+                <% }); %>            
+            </ul> 
+        <% } else { %>
+            <p>No scores earned yet, play a game!</p>
+        <% } %>
+    </div>
+</div>
+
+
+<div>
+    <a href="/game"><button id="game" class="button">Play a game</button></a>
+</div>
 
 
     <footer>
@@ -309,6 +296,4 @@
        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
        crossorigin="anonymous"></script>
 
-
-   <!--<script src="profile.js"></script>-->
 </body>
