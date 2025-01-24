@@ -24,9 +24,12 @@ To run the server on VS Code:
 
 1. Once the contents of the Zip File have been extracted in VS Code make sure everything looks good
 2. Run 'npm install' to install all required packages
-3. Once everything installs, in the terminal of VS code, run either 'nodemon app.js' or 'nodemon start' depending on which on works
-4. Once it is running, go to your favored browser and type "LocalHost:3500" in the url
-5. Then the page should be running! Enjoy!
+3. To make sure that MongoDB works, make a '.env' file that contains this line:
+     ATLAS_URI="mongodb+srv://<YOUR_USERNAME>:<YOUR_DB_PASSWORD>@cluster0.lcx9a.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+   Replace <YOUR_USERNAME> and <YOUR_DB_PASSWORD> according to your personal username and database password
+5. Once everything installs, in the terminal of VS code, run either 'nodemon app.js' or 'nodemon start' depending on which on works
+6. Once it is running, go to your favored browser and type "LocalHost:3500" in the url
+7. Then the page should be running! Enjoy!
 
 ## Team Contributions/Challenges
 
