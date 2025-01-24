@@ -1,2 +1,46 @@
-# Quiz-Application-2.0
-This is the 2.0 version of the quiz application.
+# ThinkStorm - A Quiz Application to Help Build Full Stack Knowledge
+
+## Overview
+
+Hey there! Welcome to ThinkStorm! This is a collaborative project where we use HTML/CSS and JavaScript (Node.js) to design and create a beginner full stack project. This project entails a quiz application which randomly choose questions (through the use of a quiz API) and outputs them for the users to answer in a timed situation. Afterwards, the user will get a score of how many they got correct. Additionally, the user will also have access to their profile where they can also see past scores from past quizzes they have taken!
+
+With regards to technologies used, we currently have HTML/CSS for the frontend and Express.JS for the backend and for running the server. While for the database in order to store the users we make use of MongoDB through Express.js. Alongside this, we have used technologies such as BootStrap and CHATGPT to obtain and refine various portions of the code.
+
+## Features
+
+- Choosing questions from a general knowledge api which features questions from various topics and varying difficulties
+- Having a custom timer for the questions
+- Using a signup/signin page to keep track of users as well as tracking their past and current scores (storing it all in MongoDB)
+
+## How to Access and Run the Server
+
+To access the code, these steps can be used (Note, to access the code VS Code is recommended):
+
+1. On the Github Repository first go under the Code Tab
+2. Click on the blue Code button and in the dropdown click on "Download Zip"
+3. Once the Zip file downloads, extract all the items from the folder and connect to an IDE to run! (Steps for VS Code continued below!)
+
+To run the server on VS Code:
+
+1. Once the contents of the Zip File have been extracted in VS Code make sure everything looks good
+2. Run 'npm install' to install all required packages
+3. Once everything installs, in the terminal of VS code, run either 'nodemon app.js' or 'nodemon start' depending on which on works
+4. Once it is running, go to your favored browser and type "LocalHost:3500" in the url
+5. Then the page should be running! Enjoy!
+
+## Team Contributions/Challenges
+
+Our team is made up of four aspiring computer scientists, and we each had our respective roles in this project.
+
+- Sulaiman Alam: Focused on the coding of the home page, signup page, and signin page. Also worked on the app.js page to enable the server running and the sharing of data.
+- Paulo Criollo: Focused on the game page of the application and coding the system that randomly chooses questions from the json file for the user to answer.
+- Jenny Zheng: Focused on the results page of the application and coding the parts that allowed it to show the specific user's name and score on this page.
+- Anjiya Shrestha: Focused on the timer section of the game, making sure the timer is shown and resets on each question and also doing the nav and make sure its works.
+
+## Next Steps
+
+Building upon our first version of this project, we have made a lot of steps in the forward direction. Firstly, we have improved the backend of the server to use Express.js to streamline the process. Additionally, we have included the use of an API to retrieve the questions from removing the need hard coded questions.
+
+To build upon this, we hope to use further technologies such as React to streamline the front end of the application as well as further knowledge of databases to improve the storage of users and their scores. Additionally, we hope to use technologies that will allow users to have a session in the game however long they are signed in for.
+
+We hope that this project helps to not only build upon our current knowledge in front end programming, but also in creating avenues to explore various aspects of the field. Inspiring us to not only keep working, but also with the hope that it inspires other students in computer science to build these types of projects!
