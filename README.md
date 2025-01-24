@@ -33,7 +33,7 @@ To run the server on VS Code:
 Our team is made up of four aspiring computer scientists, and we each had our respective roles in this project.
 
 - Sulaiman Alam: Focused on the coding of the home page, signup page, and signin page. Also worked on the app.js page to enable the server running and the sharing of data.
-- Paulo Criollo: Focused on the game page of the application and coding the system that randomly chooses questions from the json file for the user to answer.
+- Paulo Criollo: Focused on the game page of the application and coding the system that randomly retrieve questions from the OpenTrivia API and gets dynamically displayed to the user to answer.
 - Jenny Zheng: Focused on the results page of the application and coding the parts that allowed it to show the specific user's name and score on this page.
 - Anjiya Shrestha: Focused on the profile page of the application, and coding the parts like the welcome and making sure it works.
 
